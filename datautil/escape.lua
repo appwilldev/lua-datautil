@@ -32,7 +32,7 @@ function parseQuery(s)
   local ret = {}
   for _, equal in ipairs(S.split(s, '&')) do
     local pair = S.split(equal, '=')
-    ret[pair[1]] = pair[2]
+    ret[pair[1]] = URIunescape(pair[2])
   end
   return ret
 end
